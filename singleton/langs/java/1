@@ -1,0 +1,3 @@
+all:
+	javac Singleton.java
+	java Singleton

@@ -1,0 +1,3 @@
+How much it took to code:
+	·Java: 40mins (first intorduction to singleton, and new language)
+	·Python: 15mins (easy language, but oop is different compared to java)

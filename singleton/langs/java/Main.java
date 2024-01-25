@@ -4,31 +4,42 @@ public class Main
 {
 	public static void main (String args[])
 	{
+		//make a java Scanner for later
 		Scanner input = new Scanner(System.in);
 		while (true)
 		{
+			//create obj and obj2 
 			Singleton obj = Singleton.getInstance("true");
-			
-			//janky, unsafe prototype-code incoming		
-			System.out.println("Do you want to delete Singleton obj? 0(delete) 1(continue)");
-			int player_in = input.nextInt();
-			if (player_in == 0)
+			Singleton obj2 = Singleton.getInstance("false");
+		
+			//print out the data variable in both obj
+			//they should be the same becasue obj == obj2
+			System.out.println("The data in obj and obj2: ");
+			System.out.println("	·obj: " + obj.getData());
+			System.out.println("	·obj2: " + obj2.getData());
+
+			//print out the mem adress
+			//its the same because obj2 and obj are the same object
+			System.out.println("The mem adress of obj and obj2");
+			System.out.println("	·obj: " + "@" + Integer.toHexString(obj.hashCode()));
+			System.out.println("	·obj2: " + "@" + Integer.toHexString(obj2.hashCode()));
+
+			//ask user to repeat the proces or exit
+			System.out.println("Enter 0 if you want to exit, enter 1 if you want to run again");
+			int repeat = input.nextInt();
+			if (repeat == 1)
 			{
-				obj.nullify();
+				continue;
 			}
-			else if (player_in == 1)
+			else if (repeat == 0)
 			{
-				System.out.println("Singleton obj not deleted");
+				break;
 			}
 			else
 			{
-				System.out.println("Please enter 0 or 1");
+				System.out.println("Invalid input! (Enter 0 or 1)");
 				continue;
 			}
-
-			Singleton obj2 = Singleton.getInstance("false");
-
-			System.out.println(obj2.getData());
 		}
 	}
 }

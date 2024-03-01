@@ -2,13 +2,10 @@ public class Main
 {
 	public static void main (String args[])
 	{
-		//make a java Scanner for later
-		System.out.println("Hello world");
-		
-		Salad s1 = new Salad();
+		Human h1 = Human.builder()
+		.name("Jhon")
+		.build();
 
-		s1.add_cat().add_meat().add_rock();
-
-		s1.eat();
+		h1.sayHi();
 	}
 }

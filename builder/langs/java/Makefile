@@ -1,4 +1,4 @@
 all:
-	javac Main.java Salad.java
+	javac Main.java Human.java
 	ls
 	java Main
